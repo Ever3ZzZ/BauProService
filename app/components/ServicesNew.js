@@ -6,42 +6,42 @@ const services = [
     title: "Trockenbau",
     description:
       "Wände, Decken und Trennsysteme sauber geplant und fachgerecht ausgeführt.",
-    image: "/hero.png",
+    image: "/Trockenbau.jpg",
     imagePosition: "object-[58%_center]",
   },
   {
     title: "Spachtelarbeiten Q1-Q4",
     description:
       "Von der soliden Grundverspachtelung bis zur hochwertigen Oberfläche für moderne Innenräume.",
-    image: "/before2.png",
+    image: "/Spachtelarbeiten.jpg",
     imagePosition: "object-[45%_center]",
   },
   {
     title: "Kabelverlegung im Hochbau",
     description:
       "Zuverlässige Verlegearbeiten im Rahmen von Neubau, Umbau und Sanierung.",
-    image: "/before2.png",
+    image: "/Kabel.png",
     imagePosition: "object-[62%_center]",
   },
   {
     title: "Türenmontage",
     description:
       "Fachgerechte Montage von Innentüren mit sauberen Anschlüssen und präzisem Abschluss.",
-    image: "/after2.png",
+    image: "/TureMontag.jpg",
     imagePosition: "object-[30%_center]",
   },
   {
     title: "Bodenverlegung",
     description:
       "Präzise Bodenarbeiten für Wohnräume, Büroräume und modernisierte Flächen.",
-    image: "/after1.png",
+    image: "/Bodenverlegung.jpg",
     imagePosition: "object-[40%_center]",
   },
   {
     title: "Renovierung & Sanierung",
     description:
       "Komplette Unterstützung bei Modernisierung, Umbau und Instandsetzung aus einer Hand.",
-    image: "/hero.png",
+    image: "/renovierung and sanierung.png",
     imagePosition: "object-[72%_center]",
   },
 ];

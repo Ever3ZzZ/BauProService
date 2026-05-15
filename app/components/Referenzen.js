@@ -25,6 +25,7 @@ function BeforeAfter({ before, after, title, subtitle }) {
   const [position, setPosition] = useState(50);
   const [isDragging, setIsDragging] = useState(false);
   const containerRef = useRef(null);
+  const handleRef = useRef(null);
   const isBeforeActive = position >= 95;
   const isCompareActive = position > 5 && position < 95;
   const isAfterActive = position <= 5;
@@ -43,7 +44,9 @@ function BeforeAfter({ before, after, title, subtitle }) {
   };
 
   const handlePointerDown = (event) => {
+    event.preventDefault();
     setIsDragging(true);
+    handleRef.current?.setPointerCapture?.(event.pointerId);
     updatePosition(event.clientX);
   };
 
@@ -52,7 +55,8 @@ function BeforeAfter({ before, after, title, subtitle }) {
     updatePosition(event.clientX);
   };
 
-  const handlePointerUp = () => {
+  const handlePointerUp = (event) => {
+    handleRef.current?.releasePointerCapture?.(event.pointerId);
     setIsDragging(false);
   };
 
@@ -60,11 +64,7 @@ function BeforeAfter({ before, after, title, subtitle }) {
     <article className="overflow-hidden rounded-[18px] border border-[#e5d7bd] bg-white shadow-[0_18px_48px_rgba(66,40,0,0.08)]">
       <div
         ref={containerRef}
-        className="relative h-[360px] w-full cursor-ew-resize overflow-hidden bg-[#e8e1d3] select-none touch-none sm:h-[380px]"
-        onPointerDown={handlePointerDown}
-        onPointerMove={handlePointerMove}
-        onPointerUp={handlePointerUp}
-        onPointerLeave={handlePointerUp}
+        className="relative h-[360px] w-full overflow-hidden bg-[#e8e1d3] select-none sm:h-[380px]"
       >
         <img
           src={after}
@@ -95,10 +95,15 @@ function BeforeAfter({ before, after, title, subtitle }) {
         />
 
         <div
-          className={`absolute top-1/2 flex h-14 w-14 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border-4 border-white bg-[#ffbf12] text-black shadow-[0_10px_24px_rgba(0,0,0,0.24)] transition-[left,transform,box-shadow] duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] ${
+          ref={handleRef}
+          className={`${isDragging ? "cursor-grabbing" : "cursor-ew-resize"} absolute top-1/2 flex h-14 w-14 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border-4 border-white bg-[#ffbf12] text-black shadow-[0_10px_24px_rgba(0,0,0,0.24)] transition-[left,transform,box-shadow] duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] touch-none ${
             isDragging ? "scale-110 shadow-[0_16px_30px_rgba(0,0,0,0.28)]" : ""
           }`}
           style={{ left: `${position}%` }}
+          onPointerDown={handlePointerDown}
+          onPointerMove={handlePointerMove}
+          onPointerUp={handlePointerUp}
+          onPointerCancel={handlePointerUp}
         >
           <ArrowHandle />
         </div>
@@ -172,6 +177,144 @@ function BeforeAfter({ before, after, title, subtitle }) {
   );
 }
 
+const stepSlides = [
+  {
+    image: "/firstStep.jpg",
+    label: "Step 1",
+    title: "Rohbau & Tragwerksmontage",
+    subtitle:
+      "Montage der Holzkonstruktion und Vorbereitung der Gebaeudehuelle",
+  },
+  {
+    image: "/secondStep.jpg",
+    label: "Step 2",
+    title: "Innenausbau & Lichtinstallation",
+    subtitle:
+      "Ausbau der Innenraeume mit Beleuchtung und Deckenverkleidung",
+  },
+  {
+    image: "/LastStep.jpg",
+    label: "Step 3",
+    title: "Finalisierung & Oberflaechenarbeiten",
+    subtitle:
+      "Letzte Ausbauarbeiten, Verglasung und Fertigstellung des Innenbereichs",
+  },
+];
+
+function StepShowcase() {
+  const [activeIndex, setActiveIndex] = useState(0);
+  const currentStep = stepSlides[activeIndex];
+
+  const goPrevious = () => {
+    setActiveIndex((current) =>
+      current === 0 ? stepSlides.length - 1 : current - 1
+    );
+  };
+
+  const goNext = () => {
+    setActiveIndex((current) =>
+      current === stepSlides.length - 1 ? 0 : current + 1
+    );
+  };
+
+  return (
+    <article className="overflow-hidden rounded-[22px] border border-[#e5d7bd] bg-white shadow-[0_18px_48px_rgba(66,40,0,0.08)]">
+      <div className="border-b border-[#eadfcd] bg-[linear-gradient(180deg,#fffdfa_0%,#fff7ea_100%)] px-5 py-6 sm:px-7">
+        <div className="inline-flex rounded-full bg-[#ffbf12] px-4 py-2 text-sm font-black uppercase tracking-[0.14em] text-[#121212]">
+          {currentStep.label}
+        </div>
+        <h3 className="mt-4 text-3xl font-black leading-tight text-[#121212] sm:text-[2.2rem]">
+          {currentStep.title}
+        </h3>
+        <p className="mt-3 max-w-3xl text-base leading-7 text-[#655e55] sm:text-lg sm:leading-8">
+          {currentStep.subtitle}
+        </p>
+      </div>
+
+      <div className="relative h-[380px] w-full overflow-hidden bg-[#e9dfcf] sm:h-[460px]">
+        {stepSlides.map((step, index) => (
+          <img
+            key={step.label}
+            src={step.image}
+            alt={`${step.label} ${step.title}`}
+            className={`absolute inset-0 h-full w-full object-cover transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] ${
+              index === activeIndex
+                ? "translate-x-0 opacity-100 scale-100"
+                : index < activeIndex
+                  ? "-translate-x-[8%] opacity-0 scale-[1.02]"
+                  : "translate-x-[8%] opacity-0 scale-[1.02]"
+            }`}
+          />
+        ))}
+
+        <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(16,16,16,0.02)_0%,rgba(16,16,16,0.16)_100%)]" />
+
+        <button
+          type="button"
+          onClick={goPrevious}
+          aria-label="Vorheriger Schritt"
+          className="absolute left-4 top-1/2 inline-flex h-12 w-12 -translate-y-1/2 items-center justify-center rounded-full border-4 border-white bg-[#ffbf12] text-[#121212] shadow-[0_10px_24px_rgba(0,0,0,0.24)] transition hover:scale-105"
+        >
+          <svg
+            aria-hidden="true"
+            viewBox="0 0 24 24"
+            className="h-5 w-5"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2.4"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          >
+            <path d="M15 18l-6-6 6-6" />
+          </svg>
+        </button>
+
+        <button
+          type="button"
+          onClick={goNext}
+          aria-label="Naechster Schritt"
+          className="absolute right-4 top-1/2 inline-flex h-12 w-12 -translate-y-1/2 items-center justify-center rounded-full border-4 border-white bg-[#ffbf12] text-[#121212] shadow-[0_10px_24px_rgba(0,0,0,0.24)] transition hover:scale-105"
+        >
+          <svg
+            aria-hidden="true"
+            viewBox="0 0 24 24"
+            className="h-5 w-5"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2.4"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          >
+            <path d="M9 18l6-6-6-6" />
+          </svg>
+        </button>
+      </div>
+
+      <div className="flex flex-col gap-4 border-t border-[#eadfcd] bg-[#fff9ef] px-5 py-5 sm:flex-row sm:items-center sm:justify-between sm:px-7">
+        <div className="flex items-center gap-2">
+          {stepSlides.map((step, index) => (
+            <button
+              key={step.label}
+              type="button"
+              onClick={() => setActiveIndex(index)}
+              aria-label={step.label}
+              className={`h-3 rounded-full transition-all duration-300 ${
+                index === activeIndex
+                  ? "w-10 bg-[#ffbf12]"
+                  : "w-3 bg-[#d7ccb5] hover:bg-[#c8b78d]"
+              }`}
+            />
+          ))}
+        </div>
+
+        <div className="text-sm font-bold uppercase tracking-[0.16em] text-[#8a7755]">
+          {activeIndex + 1} / {stepSlides.length}
+        </div>
+      </div>
+    </article>
+  );
+}
+
 export default function Referenzen({ id }) {
   return (
     <section id={id} className="bg-[#f5f1e8] py-20">
@@ -189,8 +332,8 @@ export default function Referenzen({ id }) {
         <div className="grid gap-8 md:grid-cols-2">
           <Reveal delay={40}>
             <BeforeAfter
-              before="/before1.png"
-              after="/after1.png"
+              before="/before1.jpg"
+              after="/after1.jpg"
               subtitle="Innenausbau & Bodenverlegung"
               title="Wohnraum modernisiert"
             />
@@ -198,13 +341,17 @@ export default function Referenzen({ id }) {
 
           <Reveal delay={140}>
             <BeforeAfter
-              before="/before2.png"
-              after="/after2.png"
+              before="/before2.jpg"
+              after="/after2.jpg"
               subtitle="Spachtelarbeiten & Malervorbereitung"
-              title="Wände sauber gespachtelt"
+              title="Waende sauber gespachtelt"
             />
           </Reveal>
         </div>
+
+        <Reveal delay={160} className="mt-8">
+          <StepShowcase />
+        </Reveal>
       </div>
     </section>
   );
