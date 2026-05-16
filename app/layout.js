@@ -14,59 +14,83 @@ const geistMono = Geist_Mono({
 
 export const metadata = {
   metadataBase: new URL(siteConfig.siteUrl),
+
   title: {
-    default: "BauProService Rhoen | Trockenbau & Innenausbau",
-    template: "%s | BauProService Rhoen",
+    default: "BauProService Rhön | Trockenbau & Innenausbau",
+    template: "%s | BauProService Rhön",
   },
+
   description: siteConfig.description,
+
   applicationName: siteConfig.name,
+
   keywords: [
-    "Trockenbau",
-    "Innenausbau",
-    "Spachtelarbeiten",
-    "Bodenverlegung",
-    "Renovierung",
-    "Sanierung",
+    "Trockenbau Bad Kissingen",
+    "Innenausbau Bad Kissingen",
+    "Trockenbauer Bad Kissingen",
+    "Handwerker Bad Kissingen",
+    "Spachtelarbeiten Bad Kissingen",
+    "Renovierung Bad Kissingen",
+    "Sanierung Bad Kissingen",
+    "Bodenverlegung Bad Kissingen",
+    "Trockenbau Fulda",
+    "Innenausbau Fulda",
+    "Trockenbau Rhön",
+    "Innenausbau Rhön",
     "Bad Kissingen",
+    "Bad Brückenau",
     "Fulda",
-    "Bad Brueckenau",
-    "Wuerzburg",
-    "Rhoen",
+    "Würzburg",
+    "Rhön",
   ],
+
   alternates: {
     canonical: "/",
     languages: {
       "de-DE": "/",
     },
   },
+
   openGraph: {
     type: "website",
     locale: "de_DE",
     url: "/",
     siteName: siteConfig.name,
-    title: "BauProService Rhoen | Trockenbau & Innenausbau",
-    description: siteConfig.description,
+
+    title: "BauProService Rhön | Trockenbau & Innenausbau",
+
+    description:
+      "Professioneller Trockenbau, Innenausbau, Spachtelarbeiten und Renovierung in Bad Kissingen, Bad Brückenau, Fulda und Umgebung.",
+
     images: [
       {
         url: "/hero.png",
         width: 1200,
         height: 630,
-        alt: "BauProService Rhoen - Trockenbau und Innenausbau",
+        alt: "BauProService Rhön - Trockenbau und Innenausbau",
       },
     ],
   },
+
   twitter: {
     card: "summary_large_image",
-    title: "BauProService Rhoen | Trockenbau & Innenausbau",
-    description: siteConfig.description,
+
+    title: "BauProService Rhön | Trockenbau & Innenausbau",
+
+    description:
+      "Professioneller Trockenbau und Innenausbau in Bad Kissingen, Fulda und der Rhön.",
+
     images: ["/hero.png"],
   },
+
   category: "construction",
+
   formatDetection: {
     telephone: true,
     email: true,
     address: true,
   },
+
   verification: {
     google: process.env.GOOGLE_SITE_VERIFICATION || undefined,
   },
@@ -78,7 +102,9 @@ export default function RootLayout({ children }) {
       lang="de"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="min-h-full flex flex-col">
+        {children}
+      </body>
     </html>
   );
 }
