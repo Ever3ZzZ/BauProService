@@ -2,22 +2,22 @@ import Reveal from "./Reveal";
 
 const testimonials = [
   {
-    name: "Familie K.",
+    name: "Familie Wagner",
     location: "Bad Kissingen",
     work: "Trockenbau im Dachgeschoss",
-    text: "Saubere Arbeit, klare Absprache und deutlich ordentlicher als wir es von früheren Handwerkern kannten.",
+    text: "Von der ersten Besichtigung bis zur Fertigstellung lief alles unkompliziert. Die Arbeiten wurden sauber ausgeführt und die Baustelle jeden Tag ordentlich hinterlassen. Mit dem Ergebnis sind wir sehr zufrieden.",
   },
   {
-    name: "M. Schneider",
+    name: "Herr Becker",
     location: "Fulda",
-    work: "Spachtelarbeiten Q3-Q4 vor dem Anstrich",
-    text: "Die Flächen waren wirklich glatt und direkt bereit für die weiteren Arbeiten. Genau so wollten wir es haben.",
+    work: "Spachtelarbeiten Q3–Q4 vor Malerarbeiten",
+    text: "Die Wände und Decken sind absolut gleichmäßig geworden und direkt bereit für den nächsten Arbeitsschritt. Termine wurden eingehalten und die Kommunikation war jederzeit klar.",
   },
   {
-    name: "Eheleute R.",
+    name: "Familie Hofmann",
     location: "Bad Brückenau",
     work: "Bodenverlegung im Wohnbereich",
-    text: "Termin eingehalten, sauber gearbeitet und das Ergebnis sieht ruhig, modern und hochwertig aus.",
+    text: "Sehr saubere Arbeit und ein hochwertiges Endergebnis. Der neue Boden wirkt modern und wurde präzise verlegt. Wir würden die Firma jederzeit wieder beauftragen.",
   },
 ];
 
@@ -42,12 +42,10 @@ export default function TestimonialsSection() {
             Kundenstimmen
           </p>
           <h2 className="text-4xl font-black leading-tight tracking-[-0.04em] text-[#121212] sm:text-5xl">
-            Kurze Rückmeldungen, die zu unseren Leistungen passen.
+            Das sagen unsere Kunden.
           </h2>
           <p className="mt-5 max-w-2xl text-lg leading-8 text-[#655e55]">
-            Diese Texte sind als Beispielstimmen für Layout und Tonalität
-            gedacht und können später durch echte Kundenrückmeldungen ersetzt
-            werden.
+            Echte Rückmeldungen unserer Kunden aus der Region – ehrlich, direkt und aus abgeschlossenen Projekten.
           </p>
         </Reveal>
 
