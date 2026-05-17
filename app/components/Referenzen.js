@@ -180,22 +180,22 @@ function BeforeAfter({ before, after, title, subtitle }) {
 const stepSlides = [
   {
     image: "/firstStep.jpg",
-    label: "Step 1",
+    label: "Schritt 1",
     title: "Rohbau & Tragwerksmontage",
     subtitle:
-      "Montage der Holzkonstruktion und Vorbereitung der Gebaeudehuelle",
+      "Montage der Holzkonstruktion und Vorbereitung der Gebäudehülle",
   },
   {
-    image: "/secondStep.jpg",
-    label: "Step 2",
+    image: "/step3.png",
+    label: "Schritt 2",
     title: "Innenausbau & Lichtinstallation",
     subtitle:
-      "Ausbau der Innenraeume mit Beleuchtung und Deckenverkleidung",
+      "Ausbau der Innenräume mit Beleuchtung und Deckenverkleidung",
   },
   {
     image: "/LastStep.jpg",
-    label: "Step 3",
-    title: "Finalisierung & Oberflaechenarbeiten",
+    label: "Schritt 3",
+    title: "Finalisierung & Oberflächenarbeiten",
     subtitle:
       "Letzte Ausbauarbeiten, Verglasung und Fertigstellung des Innenbereichs",
   },

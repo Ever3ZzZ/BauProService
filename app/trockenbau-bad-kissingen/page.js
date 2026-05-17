@@ -4,14 +4,14 @@ import { siteConfig } from "../lib/siteConfig";
 export const metadata = {
   title: "Trockenbau Bad Kissingen",
   description:
-    "Trockenbau in Bad Kissingen fuer Wohnungen, Haeuser und kleinere Gewerbeobjekte. BauProService Rhoen fuer Innenausbau, Spachtelarbeiten und saubere Renovierung.",
+    "Trockenbau in Bad Kissingen für Wohnungen, Häuser und kleinere Gewerbeobjekte. BauProService Rhön für Innenausbau, Spachtelarbeiten und saubere Renovierung.",
   alternates: {
     canonical: "/trockenbau-bad-kissingen",
   },
   openGraph: {
-    title: "Trockenbau Bad Kissingen | BauProService Rhoen",
+    title: "Trockenbau Bad Kissingen | BauProService Rhön",
     description:
-      "Trockenbau in Bad Kissingen fuer Wohnungen, Haeuser und kleinere Gewerbeobjekte. Innenausbau, Spachtelarbeiten und Renovierung.",
+      "Trockenbau in Bad Kissingen für Wohnungen, Häuser und kleinere Gewerbeobjekte. Innenausbau, Spachtelarbeiten und Renovierung.",
     url: "/trockenbau-bad-kissingen",
     images: [
       {
@@ -25,10 +25,10 @@ export const metadata = {
 };
 
 const benefits = [
-  "Trockenbau fuer Wohnraeume, Altbau und Modernisierung",
-  "Saubere Spachtelarbeiten und vorbereitete Oberflaechen",
+  "Trockenbau für Wohnräume, Altbau und Modernisierung",
+  "Saubere Spachtelarbeiten und vorbereitete Oberflächen",
   "Innenausbau mit klaren Absprachen und direktem Kontakt",
-  "Einsatz in Bad Kissingen, Bad Brueckenau und Umgebung",
+  "Einsatz in Bad Kissingen, Bad Brückenau und Umgebung",
 ];
 
 export default function TrockenbauBadKissingenPage() {
@@ -40,22 +40,24 @@ export default function TrockenbauBadKissingenPage() {
             href="/"
             className="inline-flex rounded-full border border-[#e6dbc8] bg-white px-4 py-2 text-sm font-bold text-[#121212] transition hover:bg-[#f6efe1]"
           >
-            Zurueck zur Startseite
+            Zurück zur Startseite
           </Link>
 
           <p className="mt-8 text-sm font-black uppercase tracking-[0.24em] text-[#8a7755]">
             Trockenbau Bad Kissingen
           </p>
+
           <h1 className="mt-4 max-w-4xl text-4xl font-black leading-tight tracking-[-0.04em] text-[#121212] sm:text-5xl lg:text-6xl">
-            Ihr Ansprechpartner fuer Trockenbau in Bad Kissingen.
+            Ihr Ansprechpartner für Trockenbau in Bad Kissingen.
           </h1>
+
           <p className="mt-6 max-w-3xl text-lg leading-8 text-[#655e55]">
-            BauProService Rhoen uebernimmt Trockenbau, Innenausbau,
-            Spachtelarbeiten, Bodenverlegung und Renovierung fuer Projekte in
-            Bad Kissingen. Ob einzelne Innenraeume, Modernisierung oder
+            BauProService Rhön übernimmt Trockenbau, Innenausbau,
+            Spachtelarbeiten, Bodenverlegung und Renovierung für Projekte in
+            Bad Kissingen. Ob einzelne Innenräume, Modernisierung oder
             saubere Ausbauarbeiten: wichtig sind klare Absprachen, ein
             ordentliches Ergebnis und ein Ablauf, auf den Sie sich verlassen
-            koennen.
+            können.
           </p>
 
           <div className="mt-10 grid gap-4 sm:grid-cols-2">
@@ -77,18 +79,20 @@ export default function TrockenbauBadKissingenPage() {
             <h2 className="text-3xl font-black text-[#121212]">
               Welche Trockenbauarbeiten wir in Bad Kissingen anbieten
             </h2>
+
             <div className="mt-5 space-y-4 text-lg leading-8 text-[#655e55]">
               <p>
-                Wir unterstuetzen bei klassischen Trockenbauarbeiten in
-                Wohnungen, Einfamilienhaeusern und kleineren Gewerbeobjekten.
-                Dazu gehoeren unter anderem abgehängte Decken, Verkleidungen,
-                Trennwaende, Vorbereitungen fuer moderne Innenraeume und saubere
-                Anschluesse fuer den weiteren Ausbau.
+                Wir unterstützen bei klassischen Trockenbauarbeiten in
+                Wohnungen, Einfamilienhäusern und kleineren Gewerbeobjekten.
+                Dazu gehören unter anderem abgehängte Decken, Verkleidungen,
+                Trennwände, Vorbereitungen für moderne Innenräume und saubere
+                Anschlüsse für den weiteren Ausbau.
               </p>
+
               <p>
-                Ebenso wichtig sind bei solchen Projekten die Oberflaechen:
-                Spachtelarbeiten, Vorbereitung fuer Malerarbeiten, saubere
-                Uebergaenge und ein Gesamtbild, das im Alltag hochwertig wirkt.
+                Ebenso wichtig sind bei solchen Projekten die Oberflächen:
+                Spachtelarbeiten, Vorbereitung für Malerarbeiten, saubere
+                Übergänge und ein Gesamtbild, das im Alltag hochwertig wirkt.
               </p>
             </div>
           </div>
@@ -97,10 +101,11 @@ export default function TrockenbauBadKissingenPage() {
             <h2 className="text-3xl font-black">
               Schnell Kontakt aufnehmen
             </h2>
+
             <p className="mt-5 text-lg leading-8 text-white/76">
-              Wenn Sie nach Trockenbau in Bad Kissingen suchen, koennen Sie uns
-              direkt anrufen oder per WhatsApp schreiben. So laesst sich eine
-              erste Einschaetzung schnell abstimmen.
+              Wenn Sie nach Trockenbau in Bad Kissingen suchen, können Sie uns
+              direkt anrufen oder per WhatsApp schreiben. So lässt sich eine
+              erste Einschätzung schnell abstimmen.
             </p>
 
             <div className="mt-8 flex flex-col gap-4">
@@ -110,6 +115,7 @@ export default function TrockenbauBadKissingenPage() {
               >
                 Jetzt anrufen
               </a>
+
               <a
                 href={siteConfig.whatsappHref}
                 className="inline-flex items-center justify-center rounded-2xl border border-green-400/18 bg-green-400/8 px-6 py-4 text-lg font-bold text-white transition hover:bg-green-400/14"

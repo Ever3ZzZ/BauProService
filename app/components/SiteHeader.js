@@ -42,9 +42,9 @@ export default function SiteHeader() {
             <a
               href="#home"
               className="text-base font-black tracking-[-0.03em] text-[#121212] lg:text-lg"
-              aria-label="BauProService Rhoen Startseite"
+              aria-label="BauProService Rhön Startseite"
             >
-              BauProService Rhoen
+              BauProService Rhön
             </a>
 
             <div className="flex items-center gap-1 rounded-full border border-[#eadfcb] bg-[#fffaf1] p-1.5 shadow-[0_10px_30px_rgba(74,53,14,0.05)]">
@@ -52,7 +52,7 @@ export default function SiteHeader() {
                 <a
                   key={item.href}
                   href={item.href}
-                  className="rounded-full px-4 py-2 text-sm font-black text-[#5b554a] transition hover:bg-white hover:text-[#121212] hover:shadow-sm"
+                  className="rounded-full px-4 py-2 text-sm font-black text-[#5b554a] transition hover:bg-white hover:text-[#121212] hover:shadow-sm hover:ring-2 hover:ring-[#d59d00]"
                 >
                   {item.label}
                 </a>
@@ -68,7 +68,7 @@ export default function SiteHeader() {
             <button
               type="button"
               aria-expanded={isOpen}
-              aria-label={isOpen ? "Menue schliessen" : "Menue oeffnen"}
+              aria-label={isOpen ? "Menü schließen" : "Menü öffnen"}
               className="inline-flex h-10 w-10 items-center justify-center rounded-full border-2 border-[#d59d00] bg-[rgba(255,255,255,0.92)] text-[#121212] shadow-[0_10px_24px_rgba(0,0,0,0.16)] backdrop-blur-md transition hover:bg-[#fff8ec]"
               onClick={() => setIsOpen((value) => !value)}
             >
@@ -90,7 +90,7 @@ export default function SiteHeader() {
                   key={item.href}
                   href={item.href}
                   onClick={() => setIsOpen(false)}
-                  className="rounded-2xl px-4 py-2.5 text-sm font-bold text-[#26221d] transition hover:bg-[#f6efe1]"
+                  className="rounded-2xl px-4 py-2.5 text-sm font-bold text-[#26221d] transition hover:bg-[#f6efe1] hover:ring-2 hover:ring-[#d59d00]"
                 >
                   {item.label}
                 </a>

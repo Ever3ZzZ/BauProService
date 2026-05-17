@@ -58,7 +58,7 @@ export default function ServicesNew({ id }) {
             Leistungen
           </p>
           <h2 className="text-4xl font-black leading-tight tracking-[-0.04em] text-[#121212] sm:text-5xl lg:text-6xl">
-            Alles Wichtige fuer Trockenbau, Ausbau und Modernisierung.
+            Alles Wichtige für Trockenbau, Ausbau und Modernisierung.
           </h2>
           <p className="mt-5 max-w-2xl text-lg leading-8 text-[#655e55]">
             Klar strukturierte Leistungen, saubere Abwicklung und ein Ergebnis,
