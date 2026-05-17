@@ -8,21 +8,21 @@ export default function sitemap() {
       url: siteConfig.siteUrl,
       lastModified: now,
       changeFrequency: "weekly",
-      priority: 1.0,
+      priority: 1,
     },
 
     {
       url: `${siteConfig.siteUrl}/trockenbau-bad-kissingen`,
       lastModified: now,
       changeFrequency: "weekly",
-      priority: 0.9,
+      priority: 0.95,
     },
 
     {
       url: `${siteConfig.siteUrl}/trockenbau-handwerker-innenausbau-bad-kissingen`,
       lastModified: now,
       changeFrequency: "weekly",
-      priority: 0.9,
+      priority: 0.95,
     },
 
     {
@@ -30,13 +30,34 @@ export default function sitemap() {
       lastModified: now,
       changeFrequency: "weekly",
       priority: 0.9,
-},
+    },
 
     {
       url: `${siteConfig.siteUrl}/spachtelarbeiten-bad-kissingen`,
       lastModified: now,
       changeFrequency: "weekly",
       priority: 0.9,
+    },
+
+    {
+      url: `${siteConfig.siteUrl}/renovierung-bad-kissingen`,
+      lastModified: now,
+      changeFrequency: "weekly",
+      priority: 0.9,
+    },
+
+    {
+      url: `${siteConfig.siteUrl}/trockenbau-fulda`,
+      lastModified: now,
+      changeFrequency: "weekly",
+      priority: 0.85,
+    },
+
+    {
+      url: `${siteConfig.siteUrl}/innenausbau-fulda`,
+      lastModified: now,
+      changeFrequency: "weekly",
+      priority: 0.85,
     },
   ];
 }
