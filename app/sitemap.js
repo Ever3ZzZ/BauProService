@@ -31,5 +31,12 @@ export default function sitemap() {
       changeFrequency: "weekly",
       priority: 0.9,
 },
+
+    {
+      url: `${siteConfig.siteUrl}/spachtelarbeiten-bad-kissingen`,
+      lastModified: now,
+      changeFrequency: "weekly",
+      priority: 0.9,
+    },
   ];
 }
