@@ -180,6 +180,24 @@ export default function TrockenbauBadKissingenPage() {
           Häuser und kleinere Gewerbeobjekte in der Region.
 </p>
 
+<div className="mt-10 rounded-3xl border border-[#e5d9c4] bg-[#fbf6ed] p-8">
+
+  <h2 className="text-3xl font-black text-[#121212]">
+    Trockenbau Leistungen in Bad Kissingen
+  </h2>
+
+  <ul className="mt-6 space-y-4 text-lg leading-8 text-[#655e55]">
+    <li>• Trockenbau Wände und Deckensysteme</li>
+    <li>• Gipskartonmontage</li>
+    <li>• Spachtelarbeiten Q1–Q4</li>
+    <li>• Innenausbau für Wohnungen und Häuser</li>
+    <li>• Renovierungsarbeiten</li>
+    <li>• Deckenabhängungen</li>
+    <li>• Trennwandsysteme</li>
+  </ul>
+
+</div>
+
           <div className="mt-10 grid gap-4 md:grid-cols-2">
 
             <div className="rounded-2xl border border-[#e5d9c4] p-5">
