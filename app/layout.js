@@ -13,12 +13,15 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  metadataBase: new URL(siteConfig.siteUrl),
-
   title: {
     default: "BauProService Rhön | Trockenbau & Innenausbau",
     template: "%s | BauProService Rhön",
   },
+
+  icons: {
+    icon: "/BPR.png",
+  },
+
 
   description: siteConfig.description,
 
