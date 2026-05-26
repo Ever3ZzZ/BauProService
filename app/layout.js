@@ -18,10 +18,6 @@ export const metadata = {
     template: "%s | BauProService Rhön",
   },
 
-  icons: {
-    icon: "/BPR.png",
-  },
-
 
   description: siteConfig.description,
 
