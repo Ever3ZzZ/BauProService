@@ -85,10 +85,30 @@ export default function QuoteRequestModal({ open, onClose }) {
     }));
   };
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    setIsSubmitted(true);
-  };
+  const handleSubmit = async (event) => {
+  event.preventDefault();
+
+  try {
+    const response = await fetch("/api/contact", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(formData),
+    });
+
+    const result = await response.json();
+
+    if (result.success) {
+      setIsSubmitted(true);
+    } else {
+      alert("Fehler beim Senden.");
+    }
+  } catch (error) {
+    console.error(error);
+    alert("Fehler beim Senden.");
+  }
+};
 
   return (
     <div className="quote-modal-backdrop fixed inset-0 z-[90] flex items-end justify-center bg-[#120f0a]/58 p-3 backdrop-blur-sm sm:items-center sm:p-6">
