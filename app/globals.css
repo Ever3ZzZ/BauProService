@@ -67,6 +67,11 @@ html {
   animation: quote-panel-in 0.34s cubic-bezier(0.22, 1, 0.36, 1) both;
 }
 
+.work-carousel-progress {
+  animation: work-carousel-progress 3s linear forwards;
+  transform-origin: left center;
+}
+
 @keyframes page-fade-up {
   from {
     opacity: 0;
@@ -101,6 +106,16 @@ html {
   }
 }
 
+@keyframes work-carousel-progress {
+  from {
+    transform: scaleX(0);
+  }
+
+  to {
+    transform: scaleX(1);
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
@@ -114,7 +129,8 @@ html {
   }
 
   .quote-modal-backdrop,
-  .quote-modal-panel {
+  .quote-modal-panel,
+  .work-carousel-progress {
     animation: none;
   }
 
